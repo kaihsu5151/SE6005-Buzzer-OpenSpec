@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>課堂搶答系統</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main><header><h1>課堂搶答系統</h1><p>本機活動 · Google Sheets 整合尚待真實環境驗證</p></header>
+<section class="card" id="join"><h2>選擇身分</h2><p>請在不同瀏覽器或獨立設定檔分別開啟老師與各組頁面。</p><div class="actions"><button data-role="teacher">老師</button><button data-role="student" data-team="1">第 1 組</button><button data-role="student" data-team="2">第 2 組</button></div></section>
+<section class="card" id="activity" hidden><div class="heading"><div><h2 id="identity"></h2><p id="phase"></p></div><button class="secondary" id="change">切換身分</button></div><p id="notice" role="status"></p>
+<div id="teacher" hidden><div id="setup"><label for="sheet">Google Sheets 網址或 ID</label><div class="actions"><input id="sheet" placeholder="貼上試算表網址或 ID"><button id="import">匯入 Guided Notes</button></div><p>系統無法保證偵測漏標題目或題組；請逐題檢查。</p><label><input type="checkbox" id="confirm-single"> 我已確認講義均為單題、每題答案格均已標記，並會核對匯入題數。</label><label for="numbers">示範題號（以逗號分隔）</label><div class="actions"><input id="numbers" placeholder="例如 1, 2, 3"><button id="load">設定測試題目</button></div><p>測試題目不會寫入 Google Sheets。</p></div><div class="actions"><button id="start">開始搶答</button><button id="end" class="danger">結束搶答</button><button id="export">匯出成功答案</button></div><p id="source"></p></div>
+<div id="questions"></div></section></main><script src="/static/app.js"></script></body></html>
