@@ -48,4 +48,13 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -v
 ```
 
+若需執行瀏覽器驗收，另安裝 Node.js 和 Chrome，然後在專案目錄執行：
+
+```powershell
+npm install --no-save --no-package-lock playwright
+node tests/browser_acceptance.cjs
+```
+
+測試會啟動隔離的暫存 SQLite 資料庫及本機埠 18763，使用三個獨立瀏覽器身分；不讀寫現有活動資料或 Google Sheets。若 Chrome 或 Python 不在預設位置，可分別設定 `BUZZER_BROWSER` 和 `BUZZER_TEST_PYTHON` 為執行檔完整路徑。成功後畫面證據存於 `docs/browser-evidence/`。這是自動化驗證，並非人工驗收。
+
 真正 Google Sheets 存取與寫回、範本格式及助教是否允許事前標記，仍待人工確認。
